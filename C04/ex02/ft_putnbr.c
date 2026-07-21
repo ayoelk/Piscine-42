@@ -11,26 +11,25 @@ void ft_putnbr(int nb)
     if (nb == -2147483648)
     {
         write(1, "-2147483648", 11);
-        return ;
-    }
-    else if(nb < 0)
-    {
-        write(1, "-", 1);
-        ft_putnbr(-nb);
-    }
-    else if(nb >= 0 && nb <= 9)
-    {
-        ft_putchar(nb + '0');
-    }
-    else
-    {
-        ft_putnbr(nb / 10);
-        ft_putnbr(nb % 10);
-    }
+        return;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if( nb >= 0 && nb <= 9)
+	{
+		ft_putchar(nb + '0');
+	}
+	else
+	{
+		ft_putnbr ( nb / 10);
+		ft_putnbr ( nb % 10);
+	}
 }
-
 int main()
 {
-    ft_putnbr(1000);
+    ft_putnbr(-546);
 }
 
